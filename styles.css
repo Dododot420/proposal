@@ -3,12 +3,15 @@ body {
   background: #B24592;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
   padding-bottom: 1em;
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 a {
@@ -155,6 +158,7 @@ img {
   border-radius: 50%;
   width: 170px;
   height: 170px;
+  max-width: 100%;
 }
 
 hr.style17 {
@@ -180,81 +184,93 @@ hr.style17 {
       opacity: 0;
   }
 }
-/* Make the hidden-section fill the entire viewport height */
+
+/* Make the hidden-section fill the viewport height */
 #hidden-section {
-  background-color: #f9f9f9; /* Light gray background */
   padding: 20px;
-  text-align: center;
-  min-height: 100vh; /* Ensure it fills the viewport height */
-  display: flex; /* Use flexbox to center content */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center content vertically */
-  display: none;
-
-
-}
-
-/* Optional: Styling for content within hidden-section */
-#hidden-section h2 {
-  color: #009688; /* Teal */
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-#hidden-section p {
-  color: #555555; /* Medium gray */
-  font-size: 1.2em;
-  line-height: 1.6;
-}
-
-#hidden-section hr {
-  border-color: #e0e0e0; /* Light gray */
-}
-
-#hidden-section form {
-  margin-bottom: 30px; /* Space between the form and Back to Top link */
-}
-
-.hidden-section #date-form {
-  width: 100%;
-  text-align: center;
-}
-
-.hidden-section #date-form form {
-  display: inline-block;
-  text-align: left;
-}
-
-.hidden-section label,
-.hidden-section input,
-.hidden-section select,
-.hidden-section button {
-  margin: 10px 0;
-  width: 100%;
-}
-
-#hidden-section #date-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-}
-
-#hidden-section #date-form label,
-#hidden-section #date-form input,
-#hidden-section #date-form select,
-#hidden-section #date-form button {
-  width: 50%;
-  margin-bottom: 15px;
-}
-
-#date-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Adjust spacing between elements */
+  justify-content: center;
+  text-align: center;
 }
 
-#date-form label, #date-form select, #date-form input, #date-form button {
+#hidden-section h2 {
+  font-size: 1.8rem; /* Slightly smaller for mobile */
+  margin-bottom: 20px; /* Add spacing below heading */
+}
+
+#hidden-section p {
+  font-size: 1rem; /* Standardize text size */
+  padding: 0 10px; /* Add some side padding */
+}
+
+#date-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#date-form select, #date-form input {
   width: 100%;
-  max-width: 300px; /* Adjust the max width as needed */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#date-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #fa3380;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#date-form button:hover {
+  background-color: purple;
+}
+
+/* Media Query for iPhone 14 Resolution */
+@media only screen and (max-width: 1170px) {
+  #typer-size {
+      font-size: 2.5rem; /* Scale down the text size for smaller screens */
+  }
+
+  header .vert-text h1 {
+      font-size: 3rem; /* Adjust header text size */
+  }
+
+  .p-img img {
+      width: 120px; /* Adjust logo size for mobile */
+      height: 120px; 
+  }
+
+  button {
+      width: 70px; /* Reduce button width */
+      padding: 8px; /* Adjust padding for touch targets */
+      font-size: 0.9rem; /* Ensure button text is readable */
+  }
+
+  h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+      font-size: 1.5rem; /* Adjust heading sizes */
+  }
+
+  #contacts {
+      padding: 20px; /* Add padding for better spacing */
+  }
+
+  #hidden-section {
+      padding: 15px; /* Adjust padding */
+      text-align: center; /* Ensure text is centered */
+  }
+
+  #date-form label, #date-form select, #date-form input, #date-form button {
+      max-width: 280px; /* Slightly reduce max-width */
+  }
 }
