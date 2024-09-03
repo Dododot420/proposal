@@ -1,9 +1,60 @@
-var scrollToElement = function(el, ms) {
-    var speed = (ms) ? ms : 600;
-    $('html, body').animate({
-        scrollTop: $(el).offset().top
-    }, speed);
-};
+$(document).ready(function() {
+    var scrollToElement = function(el, ms) {
+        var speed = (ms) ? ms : 600;
+        $('html, body').animate({
+            scrollTop: $(el).offset().top
+        }, speed);
+    };
+
+    $('.nav-link').on('click', function(e) {
+        e.preventDefault();
+        var el = $(this).attr('href');
+        scrollToElement(el);
+    });
+
+    $(window).scroll(function() {
+        var x = $(window).scrollTop();
+        if (x >= 42) {
+            $("#navbar").fadeIn(300);
+        } else {
+            $("#navbar").fadeOut(300);
+        }
+    });
+
+    // JavaScript for moving the "No" button to a random position
+    var noButton = document.getElementById('no-button');
+    var footer = document.getElementById('contacts');
+
+    if (noButton && footer) {
+        noButton.addEventListener('click', function() {
+            var footerWidth = footer.offsetWidth;
+            var footerHeight = footer.offsetHeight;
+            var buttonWidth = noButton.offsetWidth;
+            var buttonHeight = noButton.offsetHeight;
+            var randomX = Math.random() * (footerWidth - buttonWidth);
+            var randomY = Math.random() * (footerHeight - buttonHeight);
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        });
+    }
+
+    // JavaScript for showing the hidden section and scrolling to it
+    var yesButton = document.getElementById('yes-button');
+    var hiddenSection = document.getElementById('hidden-section');
+
+    if (yesButton && hiddenSection) {
+        yesButton.addEventListener('click', function() {
+            // Add class to make it visible and full-page
+            hiddenSection.style.display = 'block';
+            
+            // Scroll to the hidden section
+            scrollToElement('#hidden-section', 600); // Adjust the duration as needed
+        });
+    }
+});
+
 
 $(document).ready(function() {
     $('.nav-link').on('click', function(e) {
