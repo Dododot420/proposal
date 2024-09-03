@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,7 +18,7 @@
                 <!-- TEXTS -->
                 <span id="typed"></span>
                 <div id="typed-strings">
-                    <p>Hello, Ms Fadzlin</p>
+                    <p>Hi, Ms Fadzlin</p>
                     <p>Roses are red</p>
                     <p>Your eyes are brown</p>
                     <p>Can I take you out?</p>
@@ -51,7 +50,7 @@
                             </label>
                         </div>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -62,36 +61,34 @@
             <h2>Coolio. Please select your availability.</h2>
             <p>I would suggest Thursday around 8p.m. but if you're not free, feel free to give me your date and time</p>
 
-        <!-- New Form for Date Input -->
-        <form id="date-form">
-            <label for="availability-date">Select Date:</label>
-            <input type="date" id="availability-date" name="availability-date">
-            
-
-            <label for="options">Choose an Option:</label>
-            <select id="options" name="options" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="option1">Hiking</option>
-                <option value="option2">Kopitiam</option>
-                <option value="option3">Badminton</option>
-                <option value="option4">Others...</option>
-            </select>
+            <!-- New Form for Date Input -->
+            <form id="date-form">
+                <label for="availability-date">Select Date:</label>
+                <input type="date" id="availability-date" name="availability-date">
+                
+                <label for="options">Choose an Option:</label>
+                <select id="options" name="options" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="option1">Hiking</option>
+                    <option value="option2">Kopitiam</option>
+                    <option value="option3">Badminton</option>
+                    <option value="option4">Others...</option>
+                </select>
 
                 <button onclick="myFunction()">Submit</button>
-        </form>
-        
-    </div>
+            </form>
+        </div>
 
         <!-- Scroll Down Link at the Bottom of New Section -->
         <a href="#header" class="scroll-down nav-link">Back to Top</a>
     </section>
 
     <!-- Scripts -->
-     <script>
+    <script>
         function myFunction() {
           alert("Kena screenshot kak. Database belum sempat belajar nak submit2 haha..(or you can just text me)");
         }
-        </script></script>
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" async defer></script>
 </body>
